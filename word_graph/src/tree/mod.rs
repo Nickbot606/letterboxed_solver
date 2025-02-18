@@ -17,18 +17,18 @@ struct Node<T> {
 }
 
 #[allow(unused)]
-impl<T> Tree<T> 
+impl<T> Tree<T>
 where
-    T: Eq + Clone + std::hash::Hash, 
+    T: Eq + Clone + std::hash::Hash,
 {
-    // New 
+    // New
     pub fn new(root_val: T) -> Self {
         Tree {
             head: Some(Box::new(Node {
                 elem: root_val,
                 next: HashMap::new(),
                 tag: false,
-            }))
+            })),
         }
     }
 
@@ -52,7 +52,7 @@ where
                 let new_node = Box::new(Node {
                     elem: val.clone(),
                     next: HashMap::new(),
-                    tag: i == branch.len() - 1
+                    tag: i == branch.len() - 1,
                 });
 
                 current_node.next.insert(val.clone(), new_node);
@@ -98,6 +98,4 @@ where
         }
         return None;
     }
-
-
 }

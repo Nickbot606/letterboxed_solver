@@ -15,14 +15,13 @@ mod tests {
         if let Some(root) = &tree.head {
             assert_eq!(root.next.len(), 1);
 
-
             if let Some(node_a) = root.next.get(&'a') {
                 assert_eq!(node_a.elem, 'a');
                 assert_eq!(node_a.next.len(), 1);
 
                 if let Some(node_b) = node_a.next.get(&'b') {
                     assert_eq!(node_b.elem, 'b');
-                    assert_eq!(node_b.next.len(), 2); 
+                    assert_eq!(node_b.next.len(), 2);
                     assert!(node_b.tag);
 
                     if let Some(node_c) = node_b.next.get(&'c') {
@@ -59,6 +58,6 @@ mod tests {
     //     assert!(!tree.check_branch(&['a', 'b', 'c']));
     //     assert!(!tree.check_branch(&['a', 'd']));
     //     assert!(!tree.check_branch(&['a']));
-        
+
     // }
 }
